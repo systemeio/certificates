@@ -38,3 +38,5 @@ echo $CA_KEY_FILE
 
 # Create the signed certificate
 openssl x509 -req -in "$DOMAIN_NAME.csr" -CA "$CA_PEM_FILE" -CAkey "$CA_KEY_FILE" -CAcreateserial -out "$DOMAIN_NAME.crt" -days 825 -sha256 -extfile "$DOMAIN_NAME.ext"
+
+openssl x509 -in "$DOMAIN_NAME.crt" -out "$DOMAIN_NAME.pem" -outform PEM
