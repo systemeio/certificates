@@ -1,0 +1,11 @@
+[ req ]
+distinguished_name=dn
+prompt=no
+
+[ dn ]
+countryName=IE
+stateOrProvinceName=Ireland
+localityName=Dublin
+organizationName=ITCWTLocal
+organizationalUnitName=Software
+commonName=localhost
