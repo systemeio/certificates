@@ -1,2 +1,1 @@
-# certificates
-Certificates for local development
+This repository store certificates for local usage, only in development process.
