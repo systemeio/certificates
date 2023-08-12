@@ -23,15 +23,25 @@ done
 printf "Generate root certificate\n"
 >$CERT_NAME.cnf cat <<-EOF
 [ req ]
-distinguished_name=dn
-prompt=no
+default_bits = 2048
+prompt = no
+default_md = sha256
+req_extensions = req_ext
+distinguished_name = dn
 
 [ dn ]
-countryName=IE
-stateOrProvinceName=Ireland
-localityName=Dublin
-organizationName=ITCWTLocal
-organizationalUnitName=Software
-commonName=localhost
+C = IE
+ST = Ireland
+L = Dublin
+O = ITACWT
+OU = Software
+CN = systeme.local
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = systeme.local
+DNS.2 = *.systeme.local
 EOF
-openssl req -x509 -new -nodes -key "$KEY_FILE" -sha256 -days 3650 -out "$PEM_FILE" -config "$CERT_NAME.cnf"
+openssl req -x509 -new -nodes -key "$KEY_FILE" -days 3650 -out "$PEM_FILE" -config "$CERT_NAME.cnf"
