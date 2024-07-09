@@ -2,7 +2,8 @@ This repository store certificates for local usage, only in development process.
 
 When you visit local site, chrome complaints about insecure connection, to solve it download root certificate:
 
-https://github.com/systemeio/certificates/blob/main/systeme-ca.pem
+Local: https://github.com/systemeio/certificates/blob/main/systeme-local.pem
+Staging: https://github.com/systemeio/certificates/blob/main/systeme-staging-ca.pem
 
 Ubuntu:
 
